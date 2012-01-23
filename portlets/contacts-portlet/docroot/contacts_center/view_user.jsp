@@ -279,39 +279,34 @@ request.setAttribute("view_user.jsp-user", user2);
 		A.all('#p_p_id<portlet:namespace /> .quick-edit-field').each(
 			function(node) {
 				var fieldName = node.get('id');
-								
+
 				new A.Editable(
 				{
-					node: '#' + fieldName,
-					on: {
+					after: {
 						contentTextChange: function(event) {
-							var newValue = event.newVal;
-							var oldValue = event.prevVal;
-
 							if (!event.initial) {
-								if (oldValue !== newValue) {
-									A.io.request(
-										'<portlet:actionURL name="saveUserField" />',
-										{
-											after: {
-												failure: function(event, id, obj) {
-													updateMessage('<%= UnicodeLanguageUtil.get(pageContext, "your-request-failed-to-complete") %>', 'error');
-												},
-												success: function(event, id, obj) {
-													updateMessage('<%= UnicodeLanguageUtil.get(pageContext, "the-field-has-been-saved-successfully") %>', 'success');
-												}
+								A.io.request(
+									'<portlet:actionURL name="saveUserField" />',
+									{
+										after: {
+											failure: function(event, id, obj) {
+												updateMessage('<%= UnicodeLanguageUtil.get(pageContext, "your-request-failed-to-complete") %>', 'error');
 											},
-											data: {
-												fieldName: fieldName,
-												value: newValue
-											}											
+											success: function(event, id, obj) {
+												updateMessage('<%= UnicodeLanguageUtil.get(pageContext, "the-field-has-been-saved-successfully") %>', 'success');
+											}
+										},
+										data: {
+											fieldName: fieldName,
+											value: event.newVal
 										}
-									);
-								}
+									}
+								);
 							}
 						}
-					}
-				});	
+					},
+					node: '#' + fieldName
+				});
 			}	
 		);
 	</aui:script>
