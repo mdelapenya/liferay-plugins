@@ -16,6 +16,7 @@ package com.liferay.portal.search.solr.server;
 
 import com.liferay.portal.search.solr.servlet.SolrServletContextListener;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -75,15 +76,32 @@ public class LiveServerChecker implements Runnable {
 	}
 
 	public void shutdown() {
+		List<SolrServerWrapper> allSolrServerWrappers =
+			new ArrayList<SolrServerWrapper>();
+
 		List<SolrServerWrapper> deadSolrServerWrappers =
 			_solrServerFactory.getDeadServers();
+
+		allSolrServerWrappers.addAll(deadSolrServerWrappers);
 
 		deadSolrServerWrappers.clear();
 
 		List<SolrServerWrapper> liveSolrServerWrappers =
 			_solrServerFactory.getLiveServers();
 
+		allSolrServerWrappers.addAll(liveSolrServerWrappers);
+
 		liveSolrServerWrappers.clear();
+
+		for (SolrServerWrapper solrServerWrapper : allSolrServerWrappers) {
+			SolrServer solrServer = solrServerWrapper.getServer();
+
+			if (solrServer == null) {
+				continue;
+			}
+
+			_solrServerFactory.killServer(solrServerWrapper);
+		}
 
 		_scheduledExecutorService.shutdownNow();
 	}
