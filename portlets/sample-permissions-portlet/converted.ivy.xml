@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="org.arquillian.example"
+		module="arquillian-tutorial"
+		revision="1.0-SNAPSHOT"
+		status="integration"
+		publication="20140203165945"
+	>
+		<description homepage="http://arquillian.org" />
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-core__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-core__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-jboss__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-jboss__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-depchain__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-depchain__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-iphone-driver__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-iphone-driver__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-spi__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-spi__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-jboss__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-jboss__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-api__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-api__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-base__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-base__version>
+		<m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-jmx__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-jmx__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-spi__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-spi__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-maven-plugin__scope>runtime</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-maven-plugin__scope>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven__version>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-api__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-api__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-spi-maven__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-spi-maven__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven__version>
+		<m:dependency.management__com.opera__operadriver__version>1.5</m:dependency.management__com.opera__operadriver__version>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-container__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-container__version>
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-container__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-container__version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-cdi__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-cdi__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-impl-base__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-impl-base__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-support__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-support__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-configuration__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-configuration__version>
+		<m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-servlet__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-servlet__version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api-nio2__version>1.1.2</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api-nio2__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-impl-base__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-impl-base__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-javaee__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-javaee__version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api__version>1.1.2</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-api__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-api__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-javaee__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-javaee__version>
+		<m:properties__project.build.sourceEncoding>UTF-8</m:properties__project.build.sourceEncoding>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api__version>
+		<m:dependency.management__com.github.detro.ghostdriver__phantomjsdriver__version>1.0.4</m:dependency.management__com.github.detro.ghostdriver__phantomjsdriver__version>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-core__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-core__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-ie-driver__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-ie-driver__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-spi__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-spi__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium-depchain__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium-depchain__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-android-driver__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-android-driver__version>
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-standalone__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-standalone__version>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-impl-base__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-impl-base__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-htmlunit-driver__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-htmlunit-driver__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-spi__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-spi__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium-server__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium-server__version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-resource__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-resource__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-base__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-base__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-gen__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-gen__version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-spi__version>1.1.2</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-spi__version>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-spi__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-spi__version>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-impl-base__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-impl-base__version>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-standalone__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-standalone__version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-nio2__version>1.1.2</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-nio2__version>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-api__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-api__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-spi__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-spi__version>
+		<m:maven.plugins>null__maven-compiler-plugin__2.3.2</m:maven.plugins>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-spi__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-spi__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-remote-driver__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-remote-driver__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven-archive__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven-archive__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-impl__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-impl__version>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-impl-base__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-impl-base__version>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-api__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-api__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-firefox-driver__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-firefox-driver__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver-depchain__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver-depchain__version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-base__version>1.1.2</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-base__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-java__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-java__version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-initialcontext__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-initialcontext__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-api__version>1.2.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-api__version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-ejb__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-ejb__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-server__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-server__version>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-spi__version>1.1.2.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-spi__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven-archive__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven-archive__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-chrome-driver__version>2.35.0</m:dependency.management__org.seleniumhq.selenium__selenium-chrome-driver__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-maven-plugin__version>2.0.0</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-maven-plugin__version>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+		<artifact name="arquillian-tutorial" type="jar" ext="jar" conf="master"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.jboss.arquillian.graphene" name="graphene-webdriver" rev="2.0.0.Final" force="true" conf="test->runtime(*),master(*)">
+			<artifact name="graphene-webdriver" type="pom" ext="pom" conf=""/>
+		</dependency>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-core" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-jboss" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-depchain" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-standalone" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-impl-base" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-spi" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-jboss" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-api" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-resource" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-base" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-base" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.arquillian.protocol" module="arquillian-protocol-jmx" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-gen" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-spi" matcher="exact" rev="1.1.2"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-spi" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-spi" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-maven-plugin" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-api" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-api-maven" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-standalone" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-impl-base" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-impl-nio2" matcher="exact" rev="1.1.2"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-api" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-spi" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-spi" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-impl-maven-archive" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-spi-maven" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-impl-maven" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-container" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-container" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-cdi" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-impl-base" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-impl-base" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-api" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.arquillian.protocol" module="arquillian-protocol-servlet" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-api-nio2" matcher="exact" rev="1.1.2"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-impl-base" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-javaee" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-api" matcher="exact" rev="1.1.2"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-impl-base" matcher="exact" rev="1.1.2"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-initialcontext" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-javaee" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-ejb" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-api" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-spi" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-api-maven-archive" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-core" matcher="exact" rev="1.1.2.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-maven-plugin" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-spi" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.seleniumhq.selenium" module="selenium-remote-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-selenium" matcher="exact" rev="1.2.0.Final"/>
+		<override org="com.opera" module="operadriver" matcher="exact" rev="1.5"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-webdriver" matcher="exact" rev="1.2.0.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-support" matcher="exact" rev="2.35.0"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-impl" matcher="exact" rev="1.2.0.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-selenium-depchain" matcher="exact" rev="1.2.0.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-android-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-configuration" matcher="exact" rev="1.2.0.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-iphone-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-htmlunit-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-firefox-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-webdriver-depchain" matcher="exact" rev="1.2.0.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-selenium-server" matcher="exact" rev="1.2.0.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-spi" matcher="exact" rev="1.2.0.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-java" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-api" matcher="exact" rev="2.35.0"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-api" matcher="exact" rev="1.2.0.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-server" matcher="exact" rev="2.35.0"/>
+		<override org="com.github.detro.ghostdriver" module="phantomjsdriver" matcher="exact" rev="1.0.4"/>
+		<override org="org.seleniumhq.selenium" module="selenium-chrome-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-ie-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-iphone-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-support" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-api" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-ie-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-android-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-htmlunit-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-remote-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-firefox-driver" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-java" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-server" matcher="exact" rev="2.35.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-chrome-driver" matcher="exact" rev="2.35.0"/>
+	</dependencies>
+</ivy-module>
