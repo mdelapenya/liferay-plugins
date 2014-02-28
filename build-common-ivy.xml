@@ -46,7 +46,7 @@
 							<ivy:resolve
 								file="@{ivy.xml.dir}/ivy.xml"
 								log="download-only"
-								transitive="false"
+								transitive="true"
 							/>
 
 							<if>
@@ -92,6 +92,9 @@
 			</if>
 		</sequential>
 	</for>
+	<target name="convertPom">
+		<ivy:convertpom pomFile="pom.xml" ivyFile="ivy.converted.xml" />
+	</target>
 
 	<target name="publish">
 		<ivy:settings file="${sdk.dir}/ivy-settings-publisher.xml" />
