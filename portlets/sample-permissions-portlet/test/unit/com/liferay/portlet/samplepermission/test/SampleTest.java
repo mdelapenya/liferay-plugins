@@ -18,21 +18,16 @@ import com.liferay.portal.kernel.servlet.ServletContextPool;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectHelper;
 import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.container.test.api.RunAsClient;
-import org.jboss.arquillian.drone.api.annotation.Drone;
 import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.arquillian.test.api.ArquillianResource;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 /**
  * @author Carlos Sierra Andrés
@@ -83,6 +78,6 @@ public class SampleTest {
 
 	@Test
 	public void test1() {
-		System.out.println(ServletContextPool.keySet());
+
 	}
 }

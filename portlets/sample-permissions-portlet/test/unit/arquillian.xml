@@ -11,7 +11,4 @@
 			<property name="pass">tomcat</property>
 		</configuration>
 	</container>
-	<extension qualifier="webdriver">
-		<property name="browser">chrome</property>
-	</extension>
 </arquillian>
