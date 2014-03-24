@@ -84,12 +84,9 @@ public class CalendarBookingAssetRenderer
 	public String getSummary(
 		PortletRequest portletRequest, PortletResponse portletResponse) {
 
-		String summary = _calendarBooking.getDescription();
+		Locale locale = getLocale(portletRequest);
 
-		if (portletRequest != null) {
-			summary = _calendarBooking.getDescription(
-				portletRequest.getLocale());
-		}
+		String summary = _calendarBooking.getDescription(locale);
 
 		return StringUtil.shorten(HtmlUtil.stripHtml(summary), 200);
 	}
