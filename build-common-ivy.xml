@@ -43,6 +43,16 @@
 						<then>
 							<ivy:settings file="${ivy.custom.settings.file}" />
 
+							<ivy:info file="@{ivy.xml.dir}/ivy.xml" />
+
+							<propertyregex property="ivy.configurations.no.test"
+              					input="${ivy.configurations}"
+               					regexp=", test"
+               					replace=""
+               					global="true" />
+
+							<echo>${ivy.configurations.no.test}</echo>
+
 							<ivy:resolve
 								file="@{ivy.xml.dir}/ivy.xml"
 								log="download-only"
@@ -73,13 +83,22 @@
 										overwriteMode="always"
 										pattern="@{ivy.xml.dir}/docroot/WEB-INF/lib/[artifact].[ext]"
 										type="bundle,jar,orbit"
+                                        conf="${ivy.configurations.no.test}"
 									/>
 
 									<ivy:retrieve
 										overwriteMode="always"
 										pattern="@{ivy.xml.dir}/docroot/WEB-INF/lib/[artifact]-[type]s.[ext]"
 										type="source"
+                                        conf="${ivy.configurations.no.test}"
 									/>
+
+                                    <ivy:retrieve
+                                       overwriteMode="always"
+                                       pattern="@{ivy.xml.dir}/test/lib/[artifact].[ext]"
+                                       conf="test"
+                                    />
+
 								</else>
 							</if>
 
