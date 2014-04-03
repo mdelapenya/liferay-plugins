@@ -80,6 +80,7 @@
 										pattern="@{ivy.xml.dir}/docroot/WEB-INF/lib/[artifact]-[type]s.[ext]"
 										type="source"
 									/>
+
 								</else>
 							</if>
 
