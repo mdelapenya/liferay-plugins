@@ -68,6 +68,31 @@
 			</filterset>
 		</copy>
 
+		<if>
+			<equals arg1="${arquillian.jmx.password}" arg2="" />
+			<then>
+				<var name="arquillian.jmx.password" value="tomcat" />
+			</then>
+		</if>
+
+		<if>
+			<equals arg1="${arquillian.jmx.user}" arg2="" />
+			<then>
+				<var name="arquillian.jmx.user" value="tomcat" />
+			</then>
+		</if>
+
+		<copy
+				file="tools/servers/tomcat/conf/tomcat-users.xml"
+				overwrite="true"
+				tofile="${app.server.tomcat.dir}/conf/tomcat-users.xml"
+				>
+			<filterset>
+				<filter token="arquillian.jmx.password" value="${arquillian.jmx.password}" />
+				<filter token="arquillian.jmx.user" value="${arquillian.jmx.user}" />
+			</filterset>
+		</copy>
+
 		<chmod perm="a+x">
 			<fileset dir="${app.server.tomcat.dir}/bin">
 				<include name="*.sh" />

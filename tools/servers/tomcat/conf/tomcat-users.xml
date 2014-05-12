@@ -19,10 +19,10 @@
 	  <user username="role1" password="tomcat" roles="role1"/>
 	-->
 
-	<role rolename="tomcat"/>
+	<role rolename="@arquillian.jmx.user@"/>
 	<role rolename="manager-gui"/>
 	<role rolename="manager-script"/>
 	<role rolename="manager-jmx"/>
 	<role rolename="manager-status"/>
-	<user username="tomcat" password="tomcat" roles="tomcat,manager-gui,manager-script,manager-jmx,manager-status"/>
+	<user username="@arquillian.jmx.user@" password="@arquillian.jmx.password@" roles="@arquillian.jmx.user@,manager-gui,manager-script,manager-jmx,manager-status"/>
 </tomcat-users>
