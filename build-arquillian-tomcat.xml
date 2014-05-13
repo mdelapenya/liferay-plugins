@@ -46,6 +46,27 @@
 		</if>
 
 		<copy
+			file="${app.server.tomcat.dir}/bin/setenv.bat"
+			overwrite="true"
+			tofile="${app.server.tomcat.dir}/bin/setenv.orig.bat"
+		>
+		</copy>
+
+		<copy
+			file="${app.server.tomcat.dir}/bin/setenv.sh"
+			overwrite="true"
+			tofile="${app.server.tomcat.dir}/bin/setenv.orig.sh"
+		>
+		</copy>
+
+		<copy
+			file="${app.server.tomcat.dir}/conf/tomcat-users.xml"
+			overwrite="true"
+			tofile="${app.server.tomcat.dir}/conf/tomcat-users.orig.xml"
+		>
+		</copy>
+
+		<copy
 			file="tools/servers/tomcat/bin/setenv.bat"
 			overwrite="true"
 			tofile="${app.server.tomcat.dir}/bin/setenv.bat"
