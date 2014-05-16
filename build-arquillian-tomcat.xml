@@ -32,6 +32,12 @@
 			</else>
 		</if>
 
+		<unzip
+			dest="${app.server.tomcat.dir}/webapps"
+			src="tools/servers/tomcat/webapps/manager.zip"
+			>
+		</unzip>
+
 		<copy
 			file="tools/servers/tomcat/bin/setenv.bat"
 			overwrite="true"
