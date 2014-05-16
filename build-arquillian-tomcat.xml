@@ -38,13 +38,6 @@
 			>
 		</unzip>
 
-		<if>
-			<equals arg1="${arquillian.jmx.port}" arg2="" />
-			<then>
-				<var name="arquillian.jmx.port" value="8099" />
-			</then>
-		</if>
-
 		<copy
 			file="${app.server.tomcat.dir}/bin/setenv.bat"
 			overwrite="true"
@@ -65,6 +58,13 @@
 			tofile="${app.server.tomcat.dir}/conf/tomcat-users.orig.xml"
 		>
 		</copy>
+
+		<if>
+			<equals arg1="${arquillian.jmx.port}" arg2="" />
+			<then>
+				<var name="arquillian.jmx.port" value="8099" />
+			</then>
+		</if>
 
 		<copy
 			file="tools/servers/tomcat/bin/setenv.bat"
