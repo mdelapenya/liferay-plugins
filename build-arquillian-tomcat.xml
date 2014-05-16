@@ -104,10 +104,10 @@
 		</if>
 
 		<copy
-				file="tools/servers/tomcat/conf/tomcat-users.xml"
-				overwrite="true"
-				tofile="${app.server.tomcat.dir}/conf/tomcat-users.xml"
-				>
+			file="tools/servers/tomcat/conf/tomcat-users.xml"
+			overwrite="true"
+			tofile="${app.server.tomcat.dir}/conf/tomcat-users.xml"
+		>
 			<filterset>
 				<filter token="arquillian.jmx.password" value="${arquillian.jmx.password}" />
 				<filter token="arquillian.jmx.user" value="${arquillian.jmx.user}" />
