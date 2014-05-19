@@ -7,13 +7,8 @@
 	<target name="add-arquillian-support">
 		<mkdir dir="${basedir}/test/integration" />
 
-		<copy
-			todir="${basedir}/test/integration"
-			overwrite="yes"
-			>
-			<fileset
-				file="${sdk.dir}/tools/arquillian/arquillian.xml"
-				/>
+		<copy todir="${basedir}/test/integration" overwrite="yes">
+			<fileset file="${sdk.dir}/tools/arquillian/arquillian.xml" />
 		</copy>
 
 		<replace dir="${basedir}/test/integration">

@@ -12,13 +12,8 @@
 			<sequential>
 				<mkdir dir="@{module.name}/test/integration" />
 
-				<copy
-						todir="@{module.name}/test/integration"
-						overwrite="yes"
-						>
-					<fileset
-							file="${sdk.dir}/tools/arquillian/arquillian.xml"
-							/>
+				<copy todir="@{module.name}/test/integration" overwrite="yes">
+					<fileset file="${sdk.dir}/tools/arquillian/arquillian.xml" />
 				</copy>
 
 				<replace dir="@{module.name}/test/integration">

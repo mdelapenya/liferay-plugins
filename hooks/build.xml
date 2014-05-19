@@ -12,13 +12,8 @@
 			<sequential>
 				<mkdir dir="@{module.name}/test/integration" />
 
-				<copy
-					todir="@{module.name}/test/integration"
-					overwrite="yes"
-					>
-					<fileset
-						file="${sdk.dir}/tools/arquillian/arquillian.xml"
-						/>
+				<copy todir="@{module.name}/test/integration" overwrite="yes">
+					<fileset file="${sdk.dir}/tools/arquillian/arquillian.xml" />
 				</copy>
 
 				<replace dir="@{module.name}/test/integration">
@@ -56,9 +51,7 @@
 		</if>
 
 		<copy todir="${hook.dir}">
-			<fileset
-				dir="${sdk.dir}/tools/hook_tmpl"
-			/>
+			<fileset dir="${sdk.dir}/tools/hook_tmpl" />
 		</copy>
 
 		<replace dir="${hook.dir}">
