@@ -41,21 +41,21 @@
 		<copy
 			file="${app.server.tomcat.dir}/bin/setenv.bat"
 			overwrite="true"
-			tofile="${app.server.tomcat.dir}/bin/setenv.orig.bat"
+			tofile="${app.server.tomcat.dir}/bin/setenv.bat.orig"
 		>
 		</copy>
 
 		<copy
 			file="${app.server.tomcat.dir}/bin/setenv.sh"
 			overwrite="true"
-			tofile="${app.server.tomcat.dir}/bin/setenv.orig.sh"
+			tofile="${app.server.tomcat.dir}/bin/setenv.sh.orig"
 		>
 		</copy>
 
 		<copy
 			file="${app.server.tomcat.dir}/conf/tomcat-users.xml"
 			overwrite="true"
-			tofile="${app.server.tomcat.dir}/conf/tomcat-users.orig.xml"
+			tofile="${app.server.tomcat.dir}/conf/tomcat-users.xml.orig"
 		>
 		</copy>
 
