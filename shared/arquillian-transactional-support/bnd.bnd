@@ -1,0 +1,3 @@
+Bundle-Name: Liferay Arquillian Transactional Support
+Private-Package: *
+Include-Resource: classes
