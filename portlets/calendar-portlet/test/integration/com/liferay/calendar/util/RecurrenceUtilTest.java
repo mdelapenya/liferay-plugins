@@ -14,7 +14,6 @@
 
 package com.liferay.calendar.util;
 
-import com.liferay.ant.arquilian.WebArchiveBuilder;
 import com.liferay.calendar.model.CalendarBooking;
 import com.liferay.calendar.model.impl.CalendarBookingImpl;
 import com.liferay.portal.kernel.util.CalendarFactoryUtil;
@@ -22,9 +21,7 @@ import com.liferay.portal.kernel.util.CalendarFactoryUtil;
 import java.util.Calendar;
 import java.util.List;
 
-import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -35,11 +32,6 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Arquillian.class)
 public class RecurrenceUtilTest {
-
-	@Deployment
-	public static WebArchive createDeployment() {
-		return WebArchiveBuilder.build();
-	}
 
 	@Test
 	public void testExpandCalendarBooking() {
