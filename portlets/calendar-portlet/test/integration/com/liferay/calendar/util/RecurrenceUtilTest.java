@@ -43,165 +43,185 @@ public class RecurrenceUtilTest {
 
 	@Test
 	public void testExpandCalendarBooking() {
-		CalendarBooking calendarBooking = new CalendarBookingImpl();
+		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
+		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR + 2);
 
 		int instanceCount = 3;
 
-		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
-		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR+2);
+		String recurrence = createDailyRecurrenceRule(instanceCount);
+
+		CalendarBooking calendarBooking = createCalendarBooking(
+			startTime, endTime, recurrence);
+
 		long intervalStartTime = startTime;
 		long intervalEndTime = getTime(_YEAR, _MONTH, _DAY + instanceCount, 23);
 
-		calendarBooking.setStartTime(startTime);
-		calendarBooking.setEndTime(endTime);
-		calendarBooking.setRecurrence(
-			"RRULE:FREQ=DAILY;COUNT=" + instanceCount + ";INTERVAL=1");
+		List<CalendarBooking> calendarBookingInstances =
+			RecurrenceUtil.expandCalendarBooking(
+				calendarBooking, intervalStartTime, intervalEndTime
+				, instanceCount);
 
-		List<CalendarBooking> instances = RecurrenceUtil.expandCalendarBooking(
-			calendarBooking, intervalStartTime, intervalEndTime, instanceCount);
+		Assert.assertEquals(instanceCount, calendarBookingInstances.size());
 
-		Assert.assertEquals(instanceCount, instances.size());
-
-		CalendarBooking instance = instances.get(0);
-		long expectedStartTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
-		Assert.assertEquals(expectedStartTime, instance.getStartTime());
-
-		instance = instances.get(1);
-		expectedStartTime = getTime(_YEAR, _MONTH, _DAY + 1, _HOUR);
-		Assert.assertEquals(expectedStartTime, instance.getStartTime());
-
-		instance = instances.get(2);
-		expectedStartTime = getTime(_YEAR, _MONTH, _DAY + 2, _HOUR);
-		Assert.assertEquals(expectedStartTime, instance.getStartTime());
+		testCalendarBookingStartTime(
+			getTime(_YEAR, _MONTH, _DAY, _HOUR),
+			calendarBookingInstances.get(0));
+		testCalendarBookingStartTime(
+			getTime(_YEAR, _MONTH, _DAY + 1, _HOUR),
+			calendarBookingInstances.get(1));
+		testCalendarBookingStartTime(
+			getTime(_YEAR, _MONTH, _DAY + 2, _HOUR),
+			calendarBookingInstances.get(2));
 	}
 
 	@Test
 	public void testExpandCalendarBookingSetInstanceIndex() {
-		CalendarBooking calendarBooking = new CalendarBookingImpl();
+		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
+		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR + 2);
 
 		int instanceCount = 5;
 
-		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
-		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR+2);
+		String recurrence = createDailyRecurrenceRule(instanceCount);
+
+		CalendarBooking calendarBooking = createCalendarBooking(
+			startTime, endTime, recurrence);
+
 		long intervalStartTime = startTime;
 		long intervalEndTime = getTime(_YEAR, _MONTH, _DAY + instanceCount, 23);
 
-		calendarBooking.setStartTime(startTime);
-		calendarBooking.setEndTime(endTime);
-		calendarBooking.setRecurrence(
-			"RRULE:FREQ=DAILY;COUNT=" + instanceCount + ";INTERVAL=1");
+		List<CalendarBooking> calendarBookingInstances =
+			RecurrenceUtil.expandCalendarBooking(
+				calendarBooking, intervalStartTime, intervalEndTime,
+				instanceCount);
 
-		List<CalendarBooking> instances = RecurrenceUtil.expandCalendarBooking(
-			calendarBooking, intervalStartTime, intervalEndTime, instanceCount);
+		Assert.assertEquals(instanceCount, calendarBookingInstances.size());
 
-		Assert.assertEquals(instanceCount, instances.size());
-
-		CalendarBooking instance = instances.get(0);
-		Assert.assertEquals(0, instance.getInstanceIndex());
-
-		instance = instances.get(1);
-		Assert.assertEquals(1, instance.getInstanceIndex());
-
-		instance = instances.get(2);
-		Assert.assertEquals(2, instance.getInstanceIndex());
-
-		instance = instances.get(3);
-		Assert.assertEquals(3, instance.getInstanceIndex());
-
-		instance = instances.get(4);
-		Assert.assertEquals(4, instance.getInstanceIndex());
+		testCalendarBookingInstanceIndex(0, calendarBookingInstances.get(0));
+		testCalendarBookingInstanceIndex(1, calendarBookingInstances.get(1));
+		testCalendarBookingInstanceIndex(2, calendarBookingInstances.get(2));
+		testCalendarBookingInstanceIndex(3, calendarBookingInstances.get(3));
+		testCalendarBookingInstanceIndex(4, calendarBookingInstances.get(4));
 	}
 
 	@Test
 	public void testExpandCalendarBookingSetInstanceIndexWithoutFirst() {
-		CalendarBooking calendarBooking = new CalendarBookingImpl();
-
-		int instanceCount = 5;
-		int intervalShift = 2;
-
 		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
 		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR + 2);
+
+		int instanceCount = 5;
+
+		String recurrence = createDailyRecurrenceRule(instanceCount);
+
+		CalendarBooking calendarBooking = createCalendarBooking(
+			startTime, endTime, recurrence);
+
+		int intervalShift = 2;
 
 		long intervalStartTime = getTime(
 			_YEAR, _MONTH, _DAY + intervalShift, 0);
 		long intervalEndTime = getTime(_YEAR, _MONTH, _DAY + instanceCount, 23);
 
-		calendarBooking.setStartTime(startTime);
-		calendarBooking.setEndTime(endTime);
-		calendarBooking.setRecurrence(
-			"RRULE:FREQ=DAILY;COUNT=" + instanceCount + ";INTERVAL=1");
+		List<CalendarBooking> calendarBookingInstances =
+			RecurrenceUtil.expandCalendarBooking(
+				calendarBooking, intervalStartTime, intervalEndTime,
+				instanceCount);
 
-		List<CalendarBooking> instances = RecurrenceUtil.expandCalendarBooking(
-			calendarBooking, intervalStartTime, intervalEndTime, instanceCount);
+		Assert.assertEquals(
+			instanceCount - intervalShift, calendarBookingInstances.size());
 
-		Assert.assertEquals(instanceCount - intervalShift, instances.size());
-
-		CalendarBooking instance = instances.get(0);
-		Assert.assertEquals(2, instance.getInstanceIndex());
-
-		instance = instances.get(1);
-		Assert.assertEquals(3, instance.getInstanceIndex());
-
-		instance = instances.get(2);
-		Assert.assertEquals(4, instance.getInstanceIndex());
+		testCalendarBookingInstanceIndex(2, calendarBookingInstances.get(0));
+		testCalendarBookingInstanceIndex(3, calendarBookingInstances.get(1));
+		testCalendarBookingInstanceIndex(4, calendarBookingInstances.get(2));
 	}
 
 	@Test
 	public void testExpandCalendarBookingWithoutRecurrence() {
-		CalendarBooking calendarBooking = new CalendarBookingImpl();
+		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
+		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR + 2);
+
+		CalendarBooking calendarBooking = createCalendarBooking(
+			startTime, endTime, null);
 
 		int dummyCount = 5;
 
-		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
-		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR+2);
 		long intervalStartTime = startTime;
 		long intervalEndTime = getTime(_YEAR, _MONTH, _DAY + dummyCount, 23);
 
 		calendarBooking.setStartTime(startTime);
 		calendarBooking.setEndTime(endTime);
 
-		List<CalendarBooking> instances = RecurrenceUtil.expandCalendarBooking(
-			calendarBooking, intervalStartTime, intervalEndTime, dummyCount);
+		List<CalendarBooking> calendarBookingInstances =
+			RecurrenceUtil.expandCalendarBooking(
+				calendarBooking, intervalStartTime, intervalEndTime,
+				dummyCount);
 
-		Assert.assertEquals(1, instances.size());
+		Assert.assertEquals(1, calendarBookingInstances.size());
 
-		CalendarBooking instance = instances.get(0);
-		long expectedStartTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
-		Assert.assertEquals(expectedStartTime, instance.getStartTime());
+		testCalendarBookingStartTime(
+			getTime(_YEAR, _MONTH, _DAY, _HOUR),
+			calendarBookingInstances.get(0));
 	}
 
 	@Test
 	public void testGetCalendarBookingInstance() {
-		CalendarBooking calendarBooking = new CalendarBookingImpl();
+		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
+		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR + 2);
 
 		int instanceCount = 5;
+
+		String recurrence = createDailyRecurrenceRule(instanceCount);
+
+		CalendarBooking calendarBooking = createCalendarBooking(
+			startTime, endTime, recurrence);
+
 		int instanceIndex = 3;
 
-		long startTime = getTime(_YEAR, _MONTH, _DAY, _HOUR);
-		long endTime = getTime(_YEAR, _MONTH, _DAY, _HOUR+2);
-		long intervalStartTime = startTime;
-		long intervalEndTime = getTime(_YEAR, _MONTH, _DAY + instanceCount, 23);
-
-		calendarBooking.setStartTime(startTime);
-		calendarBooking.setEndTime(endTime);
-		calendarBooking.setRecurrence(
-			"RRULE:FREQ=DAILY;COUNT=" + instanceCount + ";INTERVAL=1");
-
-		CalendarBooking instance = RecurrenceUtil.getCalendarBookingInstance(
-			calendarBooking, instanceIndex);
+		CalendarBooking calendarBookingInstance =
+			RecurrenceUtil.getCalendarBookingInstance(
+				calendarBooking, instanceIndex);
 
 		long expectedStartTime = getTime(
 			_YEAR, _MONTH, _DAY + instanceIndex, _HOUR);
 
-		Assert.assertEquals(instanceIndex, instance.getInstanceIndex());
-		Assert.assertEquals(expectedStartTime, instance.getStartTime());
+		testCalendarBookingInstanceIndex(
+			instanceIndex, calendarBookingInstance);
+		testCalendarBookingStartTime(
+			expectedStartTime, calendarBookingInstance);
 	}
 
-	private static long getTime(int year, int month, int day, int hour) {
+	protected CalendarBooking createCalendarBooking(
+		long startTime, long endTime, String recurrence) {
+
+		CalendarBooking calendarBooking = new CalendarBookingImpl();
+
+		calendarBooking.setStartTime(startTime);
+		calendarBooking.setEndTime(endTime);
+		calendarBooking.setRecurrence(recurrence);
+
+		return calendarBooking;
+	}
+
+	protected String createDailyRecurrenceRule(int instanceCount) {
+		return "RRULE:FREQ=DAILY;COUNT=" + instanceCount + ";INTERVAL=1";
+	}
+
+	protected long getTime(int year, int month, int day, int hour) {
 		Calendar calendar = CalendarFactoryUtil.getCalendar(
 			year, month, day, hour, 0);
 
 		return calendar.getTimeInMillis();
+	}
+
+	protected void testCalendarBookingInstanceIndex(
+		int expectedIndex, CalendarBooking calendarBooking) {
+
+		Assert.assertEquals(expectedIndex, calendarBooking.getInstanceIndex());
+	}
+
+	protected void testCalendarBookingStartTime(
+		long expectedStartTime, CalendarBooking calendarBooking) {
+
+		Assert.assertEquals(expectedStartTime, calendarBooking.getStartTime());
 	}
 
 	private static final int _DAY = 18;
