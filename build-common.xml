@@ -1910,30 +1910,36 @@ Please find a solution that does not require portal-impl.jar.
 
 		<sequential>
 			<if>
-				<and>
-					<not>
-						<available file="@{module.dir}/test/integration" />
-					</not>
-				</and>
+				<or>
+					<antelope:endswith string="${plugin.name}" with="-hook" />
+					<antelope:endswith string="${plugin.name}" with="-portlet" />
+				</or>
 				<then>
-					<mkdir dir="@{module.dir}/test/integration" />
-				</then>
-			</if>
+					<if>
+						<and>
+							<not>
+								<available file="@{module.dir}/test/integration" />
+							</not>
+						</and>
+						<then>
+							<mkdir dir="@{module.dir}/test/integration" />
+						</then>
+					</if>
 
-			<if>
-				<and>
-					<not>
-						<resourcecontains
-							resource="${module.dir.unix}/build.xml"
-							substring="/build-common-osgi-plugin.xml&quot;"
-						/>
-					</not>
-					<not>
-						<available file="@{module.dir}/test/integration/arquillian.xml" />
-					</not>
-				</and>
-				<then>
-					<echo file="@{module.dir}/test/integration/arquillian.xml"><![CDATA[<?xml version="1.0"?>
+					<if>
+						<and>
+							<not>
+								<resourcecontains
+									resource="${module.dir.unix}/build.xml"
+									substring="/build-common-osgi-plugin.xml&quot;"
+									/>
+							</not>
+							<not>
+								<available file="@{module.dir}/test/integration/arquillian.xml" />
+							</not>
+						</and>
+						<then>
+							<echo file="@{module.dir}/test/integration/arquillian.xml"><![CDATA[<?xml version="1.0"?>
 
 <arquillian
 	xmlns="http://jboss.org/schema/arquillian"
@@ -1948,6 +1954,8 @@ Please find a solution that does not require portal-impl.jar.
 		</configuration>
 	</container>
 </arquillian>]]></echo>
+						</then>
+					</if>
 				</then>
 			</if>
 		</sequential>
