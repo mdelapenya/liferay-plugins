@@ -14,6 +14,7 @@
 
 package com.liferay.portal.service.hooks.ext;
 
+import com.liferay.portal.model.Contact;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceWrapper;
 import com.liferay.portal.service.UserLocalService;
@@ -53,7 +54,12 @@ public class ExtUserLocalService extends UserLocalServiceWrapper {
 
 		// perform post-task operations
 
-		return user;
+		Contact contact = user.getContact();
+
+		contact.setFirstName("First Name Changed");
+		contact.setLastName("Last Name Changed");
+
+		return super.updateUser(user);
 	}
 
 }
