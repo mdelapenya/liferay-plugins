@@ -1911,7 +1911,17 @@ Please find a solution that does not require portal-impl.jar.
 		<sequential>
 			<if>
 				<and>
-					<available file="@{module.dir}/test/integration" />
+					<not>
+						<available file="@{module.dir}/test/integration" />
+					</not>
+				</and>
+				<then>
+					<mkdir dir="@{module.dir}/test/integration" />
+				</then>
+			</if>
+
+			<if>
+				<and>
 					<not>
 						<resourcecontains
 							resource="${module.dir.unix}/build.xml"
