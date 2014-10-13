@@ -2,4 +2,12 @@
 <!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
 
 <hook>
+	<service>
+		<service-type>
+			com.liferay.portal.service.UserLocalService
+		</service-type>
+		<service-impl>
+			com.liferay.portal.service.hooks.ext.ExtUserLocalService
+		</service-impl>
+	</service>
 </hook>
