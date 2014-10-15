@@ -46,21 +46,13 @@ public class ExtUserLocalService extends UserLocalServiceWrapper {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 
-		User user = super.addUser(
+		return super.addUser(
 			creatorUserId, companyId, autoPassword, password1, password2,
 			autoScreenName, screenName, emailAddress, facebookId, openId,
-			locale, firstName, middleName, lastName, prefixId, suffixId, male,
-			birthdayMonth, birthdayDay, birthdayYear, jobTitle, groupIds,
-			organizationIds, roleIds, userGroupIds, sendEmail, serviceContext);
-
-		// perform post-task operations
-
-		Contact contact = user.getContact();
-
-		contact.setFirstName("First Name Changed");
-		contact.setLastName("Last Name Changed");
-
-		return super.updateUser(user);
+			locale, "First Name Changed", middleName, "Last Name Changed",
+			prefixId, suffixId, male, birthdayMonth, birthdayDay, birthdayYear,
+			jobTitle, groupIds, organizationIds, roleIds, userGroupIds,
+			sendEmail, serviceContext);
 	}
 
 }
