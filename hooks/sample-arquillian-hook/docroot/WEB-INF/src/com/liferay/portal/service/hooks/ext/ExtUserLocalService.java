@@ -14,10 +14,9 @@
 
 package com.liferay.portal.service.hooks.ext;
 
-import com.liferay.portal.model.Contact;
 import com.liferay.portal.model.User;
-import com.liferay.portal.service.UserLocalServiceWrapper;
 import com.liferay.portal.service.UserLocalService;
+import com.liferay.portal.service.UserLocalServiceWrapper;
 
 /**
  * @author Manuel de la Peña
@@ -32,16 +31,17 @@ public class ExtUserLocalService extends UserLocalServiceWrapper {
 	}
 
 	@Override
-	public User addUser(long creatorUserId,
-			long companyId, boolean autoPassword, java.lang.String password1,
-			java.lang.String password2, boolean autoScreenName,
-			java.lang.String screenName, java.lang.String emailAddress,
-			long facebookId, java.lang.String openId, java.util.Locale locale,
-			java.lang.String firstName, java.lang.String middleName,
-			java.lang.String lastName, int prefixId, int suffixId, boolean male,
-			int birthdayMonth, int birthdayDay, int birthdayYear,
-			java.lang.String jobTitle, long[] groupIds, long[] organizationIds,
-			long[] roleIds, long[] userGroupIds, boolean sendEmail,
+	public User addUser(
+			long creatorUserId, long companyId, boolean autoPassword,
+			java.lang.String password1, java.lang.String password2, boolean
+			autoScreenName, java.lang.String screenName, java.lang.String
+			emailAddress, long facebookId, java.lang.String openId,
+			java.util.Locale locale, java.lang.String firstName,
+			java.lang.String middleName, java.lang.String lastName, int
+			prefixId, int suffixId, boolean male, int birthdayMonth, int
+			birthdayDay, int birthdayYear, java.lang.String jobTitle, long[]
+			groupIds, long[] organizationIds, long[] roleIds, long[]
+			userGroupIds, boolean sendEmail,
 			com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {

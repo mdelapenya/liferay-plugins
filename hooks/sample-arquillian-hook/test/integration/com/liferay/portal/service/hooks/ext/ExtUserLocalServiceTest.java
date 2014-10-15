@@ -96,12 +96,12 @@ public class ExtUserLocalServiceTest {
 			company.getCompanyId());
 
 		UserLocalServiceUtil.addUser(
-			defaultUser.getUserId(), company.getCompanyId(),
-			autoPassword, password1, password2, autoScreenName, screenName,
-			emailAddress, facebookId, openId, locale, firstName, middleName,
-			lastName, prefixId, suffixId, male, birthdayMonth, birthdayDay,
-			birthdayYear, jobTitle, groupIds, organizationIds, roleIds,
-			userGroupIds, sendMail, serviceContext);
+			defaultUser.getUserId(), company.getCompanyId(), autoPassword,
+			password1, password2, autoScreenName, screenName, emailAddress,
+			facebookId, openId, locale, firstName, middleName, lastName,
+			prefixId, suffixId, male, birthdayMonth, birthdayDay, birthdayYear,
+			jobTitle, groupIds, organizationIds, roleIds, userGroupIds,
+			sendMail, serviceContext);
 
 		return UserLocalServiceUtil.getUserByEmailAddress(
 			company.getCompanyId(), emailAddress);
