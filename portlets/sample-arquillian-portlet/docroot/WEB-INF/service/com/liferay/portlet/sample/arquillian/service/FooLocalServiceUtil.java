@@ -274,6 +274,19 @@ public class FooLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static com.liferay.portlet.sample.arquillian.model.Foo concat(
+		long fooOneId, long fooTwoId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().concat(fooOneId, fooTwoId);
+	}
+
+	public static com.liferay.portlet.sample.arquillian.model.Foo concat(
+		com.liferay.portlet.sample.arquillian.model.Foo one,
+		com.liferay.portlet.sample.arquillian.model.Foo two)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().concat(one, two);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

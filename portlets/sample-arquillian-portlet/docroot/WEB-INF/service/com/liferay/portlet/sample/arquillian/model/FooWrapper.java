@@ -496,7 +496,7 @@ public class FooWrapper implements Foo, ModelWrapper<Foo> {
 	}
 
 	@Override
-	public int compareTo(Foo foo) {
+	public int compareTo(com.liferay.portlet.sample.arquillian.model.Foo foo) {
 		return _foo.compareTo(foo);
 	}
 
@@ -506,17 +506,17 @@ public class FooWrapper implements Foo, ModelWrapper<Foo> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Foo> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.liferay.portlet.sample.arquillian.model.Foo> toCacheModel() {
 		return _foo.toCacheModel();
 	}
 
 	@Override
-	public Foo toEscapedModel() {
+	public com.liferay.portlet.sample.arquillian.model.Foo toEscapedModel() {
 		return new FooWrapper(_foo.toEscapedModel());
 	}
 
 	@Override
-	public Foo toUnescapedModel() {
+	public com.liferay.portlet.sample.arquillian.model.Foo toUnescapedModel() {
 		return new FooWrapper(_foo.toUnescapedModel());
 	}
 

@@ -280,6 +280,21 @@ public class FooLocalServiceWrapper implements FooLocalService,
 		return _fooLocalService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
+	public com.liferay.portlet.sample.arquillian.model.Foo concat(
+		long fooOneId, long fooTwoId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _fooLocalService.concat(fooOneId, fooTwoId);
+	}
+
+	@Override
+	public com.liferay.portlet.sample.arquillian.model.Foo concat(
+		com.liferay.portlet.sample.arquillian.model.Foo one,
+		com.liferay.portlet.sample.arquillian.model.Foo two)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _fooLocalService.concat(one, two);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

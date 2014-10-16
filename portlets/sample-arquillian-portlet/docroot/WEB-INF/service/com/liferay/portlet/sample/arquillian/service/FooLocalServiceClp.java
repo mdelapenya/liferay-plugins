@@ -113,6 +113,17 @@ public class FooLocalServiceClp implements FooLocalService {
 		_methodName17 = "setBeanIdentifier";
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
+
+		_methodName19 = "concat";
+
+		_methodParameterTypes19 = new String[] { "long", "long" };
+
+		_methodName20 = "concat";
+
+		_methodParameterTypes20 = new String[] {
+				"com.liferay.portlet.sample.arquillian.model.Foo",
+				"com.liferay.portlet.sample.arquillian.model.Foo"
+			};
 	}
 
 	@Override
@@ -661,6 +672,70 @@ public class FooLocalServiceClp implements FooLocalService {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public com.liferay.portlet.sample.arquillian.model.Foo concat(
+		long fooOneId, long fooTwoId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19, new Object[] { fooOneId, fooTwoId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.liferay.portlet.sample.arquillian.model.Foo)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.liferay.portlet.sample.arquillian.model.Foo concat(
+		com.liferay.portlet.sample.arquillian.model.Foo one,
+		com.liferay.portlet.sample.arquillian.model.Foo two)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20,
+					new Object[] {
+						ClpSerializer.translateInput(one),
+						
+					ClpSerializer.translateInput(two)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.liferay.portlet.sample.arquillian.model.Foo)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -698,4 +773,8 @@ public class FooLocalServiceClp implements FooLocalService {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+	private String _methodName19;
+	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
 }

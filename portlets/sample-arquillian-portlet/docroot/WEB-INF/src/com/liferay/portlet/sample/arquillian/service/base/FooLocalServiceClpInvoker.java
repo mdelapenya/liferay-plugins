@@ -113,6 +113,17 @@ public class FooLocalServiceClpInvoker {
 		_methodName35 = "setBeanIdentifier";
 
 		_methodParameterTypes35 = new String[] { "java.lang.String" };
+
+		_methodName40 = "concat";
+
+		_methodParameterTypes40 = new String[] { "long", "long" };
+
+		_methodName41 = "concat";
+
+		_methodParameterTypes41 = new String[] {
+				"com.liferay.portlet.sample.arquillian.model.Foo",
+				"com.liferay.portlet.sample.arquillian.model.Foo"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +227,18 @@ public class FooLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName40.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes40, parameterTypes)) {
+			return FooLocalServiceUtil.concat(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName41.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes41, parameterTypes)) {
+			return FooLocalServiceUtil.concat((com.liferay.portlet.sample.arquillian.model.Foo)arguments[0],
+				(com.liferay.portlet.sample.arquillian.model.Foo)arguments[1]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -255,4 +278,8 @@ public class FooLocalServiceClpInvoker {
 	private String[] _methodParameterTypes34;
 	private String _methodName35;
 	private String[] _methodParameterTypes35;
+	private String _methodName40;
+	private String[] _methodParameterTypes40;
+	private String _methodName41;
+	private String[] _methodParameterTypes41;
 }

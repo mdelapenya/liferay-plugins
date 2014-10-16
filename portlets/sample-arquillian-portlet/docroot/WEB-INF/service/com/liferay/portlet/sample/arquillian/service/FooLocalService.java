@@ -244,4 +244,13 @@ public interface FooLocalService extends BaseLocalService, InvokableLocalService
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public com.liferay.portlet.sample.arquillian.model.Foo concat(
+		long fooOneId, long fooTwoId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.liferay.portlet.sample.arquillian.model.Foo concat(
+		com.liferay.portlet.sample.arquillian.model.Foo one,
+		com.liferay.portlet.sample.arquillian.model.Foo two)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }
