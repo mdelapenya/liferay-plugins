@@ -1,0 +1,1 @@
+create index IX_DBB8A5A5 on SampleArquillian_Foo (field2);
