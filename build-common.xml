@@ -2213,6 +2213,8 @@ Please find a solution that does not require portal-impl.jar.
 		<attribute name="module.dir" />
 
 		<sequential>
+			<copy file="${module.framework.base.dir}/test/portal-test.jar" todir="@{module.dir}/docroot/WEB-INF/lib" />
+
 			<setup-arquillian module.dir="@{module.dir}" />
 
 			<test-cmd
@@ -2221,6 +2223,8 @@ Please find a solution that does not require portal-impl.jar.
 				test.class="**/*Test.class"
 				test.type="integration"
 			/>
+
+			<delete file="@{module.dir}/docroot/WEB-INF/lib/portal-test.jar" />
 		</sequential>
 	</macrodef>
 
