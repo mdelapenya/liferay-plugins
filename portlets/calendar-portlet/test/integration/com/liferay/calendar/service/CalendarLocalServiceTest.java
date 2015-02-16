@@ -68,11 +68,4 @@ public class CalendarLocalServiceTest {
 		Assert.assertEquals(1, calendars.size());
 	}
 
-	@Test
-	public void testGetCalendarsCount() {
-		int count = CalendarLocalServiceUtil.getCalendarsCount();
-
-		Assert.assertEquals(0, count);
-	}
-
 }
