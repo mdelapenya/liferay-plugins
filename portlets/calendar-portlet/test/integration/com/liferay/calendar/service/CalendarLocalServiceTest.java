@@ -14,6 +14,23 @@
 
 package com.liferay.calendar.service;
 
+import com.liferay.calendar.model.Calendar;
+import com.liferay.calendar.model.CalendarResourceModel;
+import com.liferay.portal.kernel.test.util.GroupTestUtil;
+import com.liferay.portal.kernel.test.util.RandomTestUtil;
+import com.liferay.portal.kernel.test.util.UserTestUtil;
+import com.liferay.portal.kernel.util.LocaleUtil;
+import com.liferay.portal.kernel.uuid.PortalUUIDUtil;
+import com.liferay.portal.model.Group;
+import com.liferay.portal.model.User;
+import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.util.PortalUtil;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
 import org.jboss.arquillian.junit.Arquillian;
 
 import org.junit.Assert;
@@ -27,10 +44,28 @@ import org.junit.runner.RunWith;
 public class CalendarLocalServiceTest {
 
 	@Test
-	public void testGetCalendarsCount() {
-		int count = CalendarLocalServiceUtil.getCalendarsCount();
+	public void testAddCalendarResourceCreatesCalendar() throws Exception {
+		User user = UserTestUtil.addUser();
+		Group group = GroupTestUtil.addGroup();
 
-		Assert.assertEquals(0, count);
+		long userId = user.getUserId();
+		long groupId = group.getGroupId();
+
+		Map<Locale, String> nameMap = new HashMap<>();
+		nameMap.put(LocaleUtil.getDefault(), user.getFullName());
+
+		CalendarResourceModel calendarResource =
+			CalendarResourceLocalServiceUtil.addCalendarResource(
+				userId, groupId, PortalUtil.getClassNameId(Group.class),
+				groupId, PortalUUIDUtil.generate(),
+				RandomTestUtil.randomString(), nameMap,
+				new HashMap<Locale, String>(), true, new ServiceContext());
+
+		List<Calendar> calendars =
+			CalendarLocalServiceUtil.getCalendarResourceCalendars(
+				groupId, calendarResource.getCalendarResourceId());
+
+		Assert.assertEquals(1, calendars.size());
 	}
 
 }
